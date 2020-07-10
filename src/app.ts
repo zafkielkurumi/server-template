@@ -1,11 +1,8 @@
-const Koa = require("koa");
-const middleWares = require('./utils/middleWare/middleWares');
-const app =new Koa();
+import express, { Request, Response } from 'express';
+import { MiddleWares } from 'src/middleWare';
 
-middleWares.forEach( middleWare => {
-    if(!middleWare) { return; }
-    app.use(middleWare);
+export const app = express();
+
+MiddleWares.forEach((middleWare) => {
+  app.use(middleWare);
 });
-module.exports = app;
-
-
