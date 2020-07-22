@@ -1,7 +1,8 @@
 {
   "parser": "@typescript-eslint/parser",
   "extends": [
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
   ],
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -20,6 +21,10 @@
         "ignoreParameters": true
       }
     ],
-    "@typescript-eslint/no-unused-vars": "warn"
+    "@typescript-eslint/no-unused-vars": "warn",
+    "no-empty-function": "off",
+    "@typescript-eslint/no-empty-function": [
+      "warn"
+    ]
   }
 }

@@ -1,6 +1,11 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { Status } from '../constants';
 
-export function errorMid(err: Error, req: Request, res: Response) {
-  res.status(Status.error).send();
-}
+export const errorMid = (
+  err: Error,
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): void => {
+  res.status(Status.error).send(err.message);
+};
