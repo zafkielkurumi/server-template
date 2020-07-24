@@ -2,11 +2,23 @@ import { createServer } from 'http';
 import { app } from './app';
 import { Port } from './constants';
 import { startWs } from './ws';
+import 'reflect-metadata';
+import { createConnection } from 'typeorm';
+import { getConfig } from './env';
+// typeorm-model-generator 从现有数据库生成TypeORM模型
 
-const server = createServer(app);
+getConfig().then(config => {
+  createConnection(config.ormOption)
+  .then( (connection) => {
+    const server = createServer(app);
 
-startWs(server);
+    startWs(server);
 
-server.listen(Port, () => {
-  console.log('port', Port, app.get('env'));
-});
+    server.listen(config.port, () => {
+      console.log('port', config.port, app.get('env'));
+    });
+  })
+  .catch((error) => console.log('TypeORM connection error: ', error));
+
+ });
+

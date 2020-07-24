@@ -1,5 +1,7 @@
 import express, { Handler } from 'express';
 
+const whiteList = [];
+
 export const authMid = (req: Request, res, next): void => {
   next();
   // if (req.headers['token']) {
