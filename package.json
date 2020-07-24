@@ -12,7 +12,7 @@
     "pre-commit": "pretty-quick --staged"
   },
   "author": "kurumi",
-  "license": "ISC",
+  "license": "ISC", 
   "husky": {
     "hooks": {
       "pre-commit": "npm run fix"

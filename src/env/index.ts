@@ -10,7 +10,6 @@ enum Env {
 }
 export async function getConfig(): Promise<EnvConfig> {
   const env = process.env.NODE_ENV;
-  console.log(env);
   const url = Env[env];
   const module = await import(`./${url}`);
   return module.Config;

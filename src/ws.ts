@@ -36,7 +36,7 @@ function upgrade(server: Server, wss: WebSocket.Server) {
     'upgrade',
     (request: IncomingMessage, socket: Socket, head: Buffer) => {
       console.log('update');
-      // console.log(reques);
+      // TODO AUTH;
       wss.handleUpgrade(request, socket, head, function done(ws) {
         wss.emit('connection', ws, request);
       });

@@ -1,7 +1,7 @@
 import { EnvConfig } from '../type';
 
 export const Config: EnvConfig = {
-  // database option
+
   ormOption: {
     type: 'postgres',
     host: 'localhost',

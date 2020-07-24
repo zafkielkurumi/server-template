@@ -1,5 +1,7 @@
+/**
+ * 玩酷Q
+ */
 import { Router, Request, Response, NextFunction } from 'express';
-import { Result } from '../models';
 import { http } from '../utils/axios';
 
 export const qqRouter = Router({
