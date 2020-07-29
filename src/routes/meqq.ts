@@ -4,6 +4,7 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { http } from '../utils/axios';
 
+export const basePath = '/pcr';
 export const qqRouter = Router({
   strict: true,
 });

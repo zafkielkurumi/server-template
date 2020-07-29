@@ -2,11 +2,11 @@
  * 多环境配置
  */
 
-import { EnvConfig } from '../type/config';
+import { EnvConfig } from '../models/evnConfig';
 
 enum Env {
-    development = 'development',
-    prod = 'prod'
+  development = 'development',
+  prod = 'prod',
 }
 export async function getConfig(): Promise<EnvConfig> {
   const env = process.env.NODE_ENV;

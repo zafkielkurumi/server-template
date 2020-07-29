@@ -4,7 +4,7 @@ export interface EnvConfig {
   /**
    *  database option
    */
-  ormOption: ConnectionOptions;
+  ormOption: ConnectionOptions[];
   /**
    * server port
    */
